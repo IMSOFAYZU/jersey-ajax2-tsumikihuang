@@ -48,7 +48,15 @@ public class UserResource {
     ///////////////////////////////////
     
     //加上 @DELETE 等等 annotation，實作 delete
-    public int deleteUser(String id){
+    @DELETE
+    @Path("/{id}")
+    public int deleteUser(@PathParam("id") String id){
+        User user=UserDB.getUser(id);
+        if(user!=null)
+        {
+            UserDB.deleteUser(user);
+            return 1;
+        }else
         return 0;
     }
     /////////////////////////////////////////

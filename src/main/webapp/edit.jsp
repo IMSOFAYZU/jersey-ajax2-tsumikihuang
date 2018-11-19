@@ -40,8 +40,8 @@
                         password:$("#password").val(),
                         email:$("#email").val()
                     }),
-                    contentType:"application/json".
-                    sucess:function(data){
+                    contentType:"application/json",
+                    success:function(data){
                         alert(data);
                     }
                 });
