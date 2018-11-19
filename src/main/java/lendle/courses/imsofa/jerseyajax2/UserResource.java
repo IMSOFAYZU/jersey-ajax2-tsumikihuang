@@ -23,7 +23,10 @@ import javax.ws.rs.core.MediaType;
 @Path("user")
 public class UserResource {
     //加上 @Path 等等 annotation, 讓它回傳某個特定 user
-    public User getUser(String id){
+    @Path("/{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUser(@PathParam("id") String id){
         return UserDB.getUser(id);
     }
     ///////////////////////////////////////////////
