@@ -27,7 +27,12 @@
                 //用 put 呼叫 webapi/user
                 //注意參數，要傳輸 json 格式字串
                 $.ajax("webapi/user", {
-                    
+                    type:"put",
+                    data:JSON.stringify(),
+                    contentType:"application/json".
+                    sucess:function(data){
+                        alert(data);
+                    }
                 });
                 ////////////////////////////
             }
